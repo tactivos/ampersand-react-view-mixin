@@ -1,0 +1,28 @@
+{
+  "name": "ampersand-react-view-mixin",
+  "version": "0.0.3",
+  "description": "Ampersand.js to Facebook's React Mixin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Santiago Montero"
+  },
+  "contributors": [{
+    "name": "Santiago Montero",
+    "email": "santiago@mural.ly"
+  }, {
+    "name": "Johnny Halife",
+    "email": "johnny@mural.ly"
+  }, {
+    "name": "Santiago Vilar",
+    "email": "santiagov@mural.ly"
+  }],
+  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tactivos/ampersand-react-view-mixin.git"
+  },
+  "directories": {}
+}
