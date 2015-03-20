@@ -20,7 +20,7 @@ module.exports = {
 	getDefaultEventNames: function(ampersandObject) {
 		if (ampersandObject.isCollection) return "add remove";
 
-		var properties = Object.keys(ampersandObject._definition.__proto__);
+		var properties = Object.keys(ampersandObject._definition.__proto__ || ampersandObject._definition);
 		properties = properties.concat(Object.keys(ampersandObject._derived));
 		properties = properties.concat(Object.keys(ampersandObject._children).filter(function(key) {
 			return !ampersandObject._children[key].isCollection;
