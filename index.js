@@ -17,12 +17,19 @@ module.exports = {
 		return fn(ampersandObject);
 	},
 
+	getKeys: function(obj){
+		var arr = [];
+		for (var key in obj) arr.push(key);
+		return arr;
+	},
+
 	getDefaultEventNames: function(ampersandObject) {
 		if (ampersandObject.isCollection) return "add remove";
 
-		var properties = Object.keys(ampersandObject._definition.__proto__ || ampersandObject._definition);
-		properties = properties.concat(Object.keys(ampersandObject._derived));
-		properties = properties.concat(Object.keys(ampersandObject._children).filter(function(key) {
+
+		var properties = this.getKeys(ampersandObject._definition);
+		properties = properties.concat(this.getKeys(ampersandObject._derived));
+		properties = properties.concat(this.getKeys(ampersandObject._children).filter(function(key) {
 			return !ampersandObject._children[key].isCollection;
 		}));
 
@@ -30,7 +37,7 @@ module.exports = {
 			return "change:" + p;
 		});
 
-		collectionsChanged = Object.keys(ampersandObject._children).filter(function(key) {
+		collectionsChanged = this.getKeys(ampersandObject._children).filter(function(key) {
 			return ampersandObject._children[key].isCollection;
 		}).map(function(c) {
 			return 'add:' + c + ' remove:' + c

@@ -1,6 +1,6 @@
 {
   "name": "ampersand-react-view-mixin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ampersand.js to Facebook's React Mixin",
   "main": "index.js",
   "scripts": {
